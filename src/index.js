@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import * as Mycelial from '@mycelial/react';
+import * as Web from '@mycelial/web';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Mycelial.MycelialProvider runtime={Web} namespace="todos">
+      <App />
+    </Mycelial.MycelialProvider>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
